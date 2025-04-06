@@ -30,9 +30,9 @@ This portfolio highlights some beginner-level projects I’ve developed using on
 ## 👩‍💻 Author
 **Amritha Santhosh**  
 1.B.Tech CSE Student  
-2.[amrithasanthosh03@gmail.com](mailto:amrithasanthosh03@gmail.com)  
+2.[amrithapss@gmail.com](mailto:amrithapss@gmail.com)  
 3.[LinkedIn](https://www.linkedin.com/in/amritha-santhosh-132ab1334/)  
-4.[Instagram](https://www.instagram.com/_amrithasanthosh/)  
+4.[Instagram](https://www.instagram.com/_amrithasanthosh/?next=%2F)  
 5.[GitHub](https://github.com/AmrithaSanthosh)  
 
 ## 📜 License
