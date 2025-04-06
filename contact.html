@@ -1,53 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Amritha Santhosh</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    :root {
-      --text-color: #466245;
-      --accent-color: #DDD8CA;
-      --nav-bg: #CDC8BC;
-      --nav-text: #466245;
-    }
-    
-
     body {
-      background-color:#20321E;
-      color: var(--text-color);
+      background-color: #20321E;
+      color: #DDD8CA;
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      padding: 0;
     }
 
     .nav-bar {
       background: rgba(205, 200, 188, 0.9);
       backdrop-filter: blur(6px);
-      color: var(--nav-text);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 12px 40px;
-      width: 100%;
+      justify-content: space-between;
+      padding: 12px 20px;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-bar img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 12px;
+      width: 100%;
     }
 
     .nav-brand {
@@ -56,99 +32,42 @@
       font-family: 'Playfair Display', serif;
       font-size: 22px;
       font-weight: 700;
-      color: var(--nav-text);
+      color: #466245;
+    }
+
+    .nav-brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 12px;
     }
 
     .nav-links a {
-      color: var(--nav-text);
+      color: #466245;
       text-decoration: none;
       margin: 0 15px;
-      font-family: 'Poppins', sans-serif;
       font-weight: 500;
-      position: relative;
-      transition: color 0.3s ease;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: var(--text-color);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-links a:hover {
-      color: #000;
-    }
-
-    .contact-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 3rem;
-    }
-
-    .contact-card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      padding: 2.5rem;
-      max-width: 600px;
-      width: 100%;
+    .contact-section {
       text-align: center;
-      transition: transform 0.3s ease;
+      padding: 60px 20px;
     }
 
-    .contact-card:hover {
-      transform: scale(1.02);
-    }
-
-    .contact-card h2 {
-      margin-bottom: 1rem;
-      color: #333;
+    .contact-section h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
     }
 
     .contact-info {
-      margin: 1.5rem 0;
-      text-align: left;
+      font-size: 18px;
+      line-height: 2;
     }
 
-    .contact-info p {
-      font-size: 1.1rem;
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .contact-info i {
-      color: #6c63ff;
-      font-size: 1.2rem;
-    }
-    @media (max-width: 768px) {
-      .contact-container {
-        padding: 2rem 1rem;
-      }
-
-      .contact-card {
-        padding: 2rem;
-      }
-    }
-
-    .contact-content {
-      padding: 80px 20px 40px;
-      color: var(--accent-color);
-    }
-
-    .contact-content a {
-      color: var(--accent-color);
+    .contact-info a {
+      color: #DDD8CA;
       text-decoration: underline;
     }
 
@@ -157,46 +76,14 @@
       color: #20321E;
       text-align: center;
       padding: 30px 20px;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
       margin-top: 40px;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-    }
-
-    .footer-content {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .footer-content p {
-      margin: 8px 0;
-      font-size: 15px;
-    }
-
-    .footer-content a {
-      text-decoration: none;
-      color: #20321E;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .footer-content a:hover {
-      color: black;
-    }
-
-    .social-icons {
-      margin: 15px 0;
     }
 
     .social-icons a {
       margin: 0 10px;
       font-size: 20px;
       color: #20321E;
-      transition: transform 0.3s ease, color 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .social-icons a:hover {
@@ -205,87 +92,14 @@
     }
 
     .credit {
-      margin-top: 10px;
       font-size: 13px;
       color: #444;
+      margin-top: 10px;
     }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-
-    .container {
-      padding: 1rem;
-    }
-    
-    .card {
-      background-color: #f1f1d1;
-      border-radius: 1rem;
-      padding: 1rem;
-      margin: 1rem 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      color: #1e2d1b;
-    }
-
-    @media screen and (min-width: 768px) {
-      .card-container {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    .card {
-      width: 30%;
-    }
-  }
-    .navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #e7e5d1;
-      padding: 1rem 0;
-  }
-
-  .navbar a {
-    margin: 0.5rem 0;
-    color: #1e2d1b;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .navbar {
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-  
-    .navbar a {
-      margin: 0 1rem;
-    }
-  }
-  .about-text {
-    line-height: 1.6;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .about-text {
-      font-size: 1.1rem;
-      padding: 2rem 4rem;
-    }
-  }
-      main {
-        max-width: 900px;
-        margin: auto;
-      }
-      section {
-        margin-bottom: 2rem;
-      }
   </style>
 </head>
 <body>
+
   <nav class="nav-bar">
     <div class="nav-brand">
       <img src="logo.png" alt="Logo" />
@@ -293,48 +107,31 @@
     </div>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html" target="_blank">About</a>
-      <a href="contact.html" target="_blank">Contact</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <header class="header">
-    <h1 style="color: aliceblue;">Contact Me</h1>
-    <h2 style="color: aliceblue;">Let’s connect and create something amazing!</h2>
-  </header>
-
-  <section class="contact-container">
-    <div class="contact-card">
-      <h2>Get In Touch</h2>
-      <div class="contact-info">
-        <p><i class="fas fa-user"></i><strong>Name:</strong> Amritha Santhosh</p>
-        <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:amrithapss@gmail.com">amrithapss@gmail.com</a></p>
-        <p><i class="fas fa-phone"></i><strong>Phone:</strong> +91 9746861306</p>
-      </div>
-      <p>You can also find me here:</p>
-      <div class="social-icons">
-        <a href="https://github.com/amritha207" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/amritha-santhosh-132ab1334/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/_amrithasanthosh/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
+  <section class="contact-section">
+    <h1>Contact Me</h1>
+    <div class="contact-info">
+      <p><strong>Name:</strong> Amritha Santhosh</p>
+      <p><strong>Email:</strong> <a href="mailto:amrithapss@gmail.com">amrithapss@gmail.com</a></p>
+      <p><strong>Phone:</strong> +91 9746861306</p>
     </div>
   </section>
 
-
   <footer>
-    <div class="footer-content">
-      <p><strong>Amritha Santhosh</strong> | Web Developer & CSE Student</p>
-      <p>
-        <a href="mailto:amrithapss@gmail.com">amrithapss@gmail.com</a> |
-        +91 9746861306
-      </p>
-      <div class="social-icons">
-        <a href="https://github.com/amritha207" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/amritha-santhosh-132ab1334/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/_amrithasanthosh/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-      <p class="credit">© 2025 Amritha Santhosh. All rights reserved.</p>
+    <p><strong>Amritha Santhosh</strong> | Web Developer & CSE Student</p>
+    <p><a href="mailto:amrithapss@gmail.com">amrithapss@gmail.com</a> | +91 9746861306</p>
+    <div class="social-icons">
+      <a href="https://github.com/amritha207" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/amritha-santhosh-132ab1334/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/_amrithasanthosh/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
+    <p class="credit">© 2025 Amritha Santhosh. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
+
