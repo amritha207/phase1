@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --text-color: #466245;
+      --accent-color: #DDD8CA;
+      --nav-bg: #CDC8BC;
+      --nav-text: #466245;
+      --card-bg: #DDD8CA;
+      --btn-bg: #DDD8CA;
+      --btn-text: #466245;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #20321E;
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .nav-bar {
+      background: rgba(205, 200, 188, 0.9);
+      backdrop-filter: blur(6px);
+      color: var(--nav-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .nav-bar img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 12px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--nav-text);
+    }
+    
+    .nav-links a {
+      color: var(--nav-text);
+      text-decoration: none;
+      margin: 0 15px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--text-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    .header {
+      margin-top: 20px;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent-color);
+      animation: fadeIn 1s ease-in-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: #b3b3b3;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .portfolio {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 50px;
+    }
+    .project {
+      flex: 0 0 auto;
+      width: 300px;
+      background-color: var(--card-bg);
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .project img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .project:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-info h2 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .project-info p {
+      font-size: 16px;
+      color: #b3b3b3;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 10px 15px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-radius: 5px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b1aa98;
+      transform: scale(1.05);
+    }
+
+      footer {
+    background-color: #CDC8BC;
+    color: #20321E;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    .footer-content a {
+      text-decoration: none;
+      color: #20321E;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-content a:hover {
+      color: black;
+    }
+
+    .social-icons {
+      margin: 15px 0;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #20321E;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: black;
+    }
+
+    .credit {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #444;
+    }
+  
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div class="nav-brand">
+      <img src="logo.png" alt="Logo" />
+      Amritha
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" target="_blank">About</a>
+      <a href="contact.html" target="_blank">Contact</a>
+    </div>
+  </nav>
+
+  <header class="header">
+    <h1>Portfolio</h1>
+    <h2>Amritha Santhosh</h2>
+  </header>
+
+  <section class="portfolio">
+    <div class="project">
+      <img src="1.png" alt="Project Image" width="50px" height="50px">
+      <div class="project-info">
+        <h2>Greeting Card</h2>
+        <h3 style="color: black;">Design a neat and thoughtful greeting card using HTML for layout and CSS for styling.
+          Highlight your message with soft colors, elegant fonts, and subtle design elements to create a visually pleasing and heartfelt card.
+        </h3>
+        <a href="Onam.html" class="btn" style="background-color:bisque;" target="_blank">View Project</a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="2.png" alt="Project Image" width="50px" height="50px">
+      <div class="project-info">
+        <h2>Table Creation</h2>
+        <h3 style="color: black;">Design a responsive HTML table and style it with CSS to ensure it looks good on all screen sizes.
+          Add hover effects, alternating row colors, and collapsible columns for a more user-friendly and dynamic presentation of data.</h3>
+        <a href="Table2.html" class="btn" style="background-color:bisque;" target="_blank">View Project</a>
+      </div>
+    </div>
+    <div class="project">
+      <img src="3.png" alt="Project Image" width="50px" height="50px">
+      <div class="project-info">
+        <h2>Question Paper</h2>
+        <h3 style="color: black;">Design a clean and organized question paper using HTML to structure sections like instructions, questions, and marks.
+          Use CSS to style fonts, spacing, and numbering for a professional and printable format.</h3>
+        <a href="paper.html" class="btn" style="background-color:bisque;" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p><strong>Amritha Santhosh</strong> | Web Developer & CSE Student</p>
+      <p>
+        <a href="mailto:amrithapss@gmail.com">amrithapss@gmail.com</a> |
+        +91 9746861306
+      </p>
+      <div class="social-icons">
+        <a href="https://github.com/amritha207" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/amritha-santhosh-132ab1334/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/_amrithasanthosh/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="credit">© 2025 Amritha Santhosh. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
