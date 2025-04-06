@@ -214,19 +214,112 @@
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
+
+<style>
+.nav-bar {
+  background: rgba(205, 200, 188, 0.9);
+  backdrop-filter: blur(6px);
+  color: #466245;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #466245;
+}
+
+.nav-brand img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: #466245;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: black;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #466245;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(205, 200, 188, 0.95);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+}
+</style>
 </head>
 <body>
-  <nav class="nav-bar">
-    <div class="nav-brand">
-      <img src="logo.png" alt="Logo" />
-      Amritha
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" target="_blank">About</a>
-      <a href="contact.html" target="_blank">Contact</a>
-    </div>
-  </nav>
+
+<nav class="nav-bar">
+  <div class="nav-brand">
+    <img src="logo.png" alt="Logo" />
+    Amritha
+  </div>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+  
 
   <header class="header">
     <h1 style="color: aliceblue;">Contact Me</h1>
@@ -268,3 +361,4 @@
   </footer>
 </body>
 </html>
+
