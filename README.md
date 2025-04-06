@@ -15,9 +15,9 @@ This portfolio highlights some beginner-level projects I’ve developed using on
 5.Footer with social media links and contact info
 
 ## 📂 Pages Included
-1.`index1.html`: Main homepage showcasing projects  
-2.`about1.html`: About me, education, skills  
-3.`contact1.html`: Contact form with personal details
+1.`index.html`: Main homepage showcasing projects  
+2.`about.html`: About me, education, skills  
+3.`contact.html`: Contact form with personal details
 
 ## 💼 Projects Showcased
 1. **Greeting Card**  
