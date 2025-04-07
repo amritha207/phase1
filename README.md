@@ -1,5 +1,6 @@
 # phase1
 A sleek and responsive portfolio website crafted with HTML and CSS. Includes a personalized about section, a professional contact page with email integration, and smooth navigation across all pages. It has been designed to reflect my creative and technical skills.
+The site is live at https://amritha207.github.io/phase1/
 
 # 🌟 Portfolio Website
 A simple yet elegant **portfolio website** built using **HTML and CSS** to showcase web development projects with a stylish UI and responsive design.
